@@ -1,5 +1,6 @@
-defmodule Standup.UserStandup do
+defmodule Standup.Repo.UserStandup do
   use Ecto.Schema
+  alias Standup.Repo.{User, StandupRecord}
 
   schema "user_standups" do
     field :text, :string

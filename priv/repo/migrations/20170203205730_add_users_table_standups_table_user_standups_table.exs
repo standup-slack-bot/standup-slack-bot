@@ -4,6 +4,7 @@ defmodule Standup.Repo.Migrations.AddUsersTableStandupsTableUserStandupsTable do
   def change do
     create table(:users) do
       add :slack_name, :string
+      add :slack_id, :string
 
       timestamps()
     end
