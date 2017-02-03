@@ -1,5 +1,6 @@
 defmodule Standup.Bot do
   use Slack
+  alias Standup.{StandupRecord}
 
   def handle_connect(slack, state) do
     {:ok, state}
