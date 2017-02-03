@@ -6,10 +6,12 @@ defmodule Standup do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
+    slack_token = Application.get_env(:slack, :api_token)
+
     # Define workers and child supervisors to be supervised
+
     children = [
-      # Starts a worker by calling: Standup.Worker.start_link(arg1, arg2, arg3)
-      # worker(Standup.Worker, [arg1, arg2, arg3]),
+      worker(Slack.Bot, [Standup.Bot, [],  slack_token]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
