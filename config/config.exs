@@ -22,6 +22,12 @@ use Mix.Config
 #
 
 config :slack, api_token: "xoxb-136004908272-gsl4cH2lcmV3GADSUC7fyzSd"
+config :standup, Repo, adapter: Ecto.Adapters.Postgres
+config :standup, ecto_repos: [Standup.Repo]
+config :standup, Standup.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "standup_dev",
+  hostname: "localhost"
 
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
