@@ -11,7 +11,7 @@ defmodule Standup do
     # Define workers and child supervisors to be supervised
 
     children = [
-      worker(Slack.Bot, [Standup.Bot, [],  slack_token]),
+      worker(Slack.Bot, [Standup.Bot, [],  slack_token])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

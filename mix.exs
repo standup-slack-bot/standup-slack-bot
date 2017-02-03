@@ -14,8 +14,15 @@ defmodule Standup.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :websocket_client, :slack],
-     mod: {Standup, []}]
+    [
+      applications:
+       [
+         :logger,
+         :slack,
+         :websocket_client,
+       ],
+      mod: {Standup, []}
+    ]
   end
 
   # Dependencies can be Hex packages:
@@ -29,6 +36,8 @@ defmodule Standup.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
+      {:ecto, "~> 2.1"},
+      {:postgrex, ">= 0.0.0"},
       {:slack, "~> 0.9.3"},
     ]
   end
